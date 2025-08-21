@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
+import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"; // Import social media icons
 
 const Footer = () => {
+  const socialLinks = [
+    { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/jeevanchetnafoundation" },
+    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/jeevanchetnafoundation" },
+    { name: "Twitter", icon: Twitter, url: "https://twitter.com/jeevanchetnafoundation" }, // Assuming Twitter handle is the same
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/company/jeevanchetnafoundation" }, // Assuming it's a company page
+  ];
+
   return (
     <footer className="bg-slate-800 text-slate-300 p-6 md:py-12 w-full">
       <div className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-sm">
@@ -13,6 +21,20 @@ const Footer = () => {
           <p>
             Dedicated to creating a better tomorrow for everyone.
           </p>
+          <div className="flex space-x-4 mt-4">
+            {socialLinks.map((platform) => (
+              <a
+                key={platform.name}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 hover:text-white transition-colors"
+                aria-label={platform.name}
+              >
+                <platform.icon className="h-6 w-6" />
+              </a>
+            ))}
+          </div>
         </div>
         <div>
           <h3 className="font-semibold text-white mb-2">Quick Links</h3>

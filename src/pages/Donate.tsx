@@ -5,19 +5,23 @@ import { Label } from "@/components/ui/label";
 import { Copy } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useConfetti } from "@/components/ConfettiProvider"; // New import
 
 const Donate = () => {
   const upiId = "jeevanchetna@sbi";
   const [amount, setAmount] = useState<string>("");
+  const { triggerConfetti } = useConfetti(); // Use the confetti hook
 
   const handleCopyUpi = () => {
     navigator.clipboard.writeText(upiId);
     toast.success("UPI ID copied to clipboard!");
+    triggerConfetti(); // Trigger confetti
   };
 
   const handleCopyBankDetail = (detail: string) => {
     navigator.clipboard.writeText(detail);
     toast.success("Bank detail copied to clipboard!");
+    triggerConfetti(); // Trigger confetti
   };
 
   const generateUpiLink = () => {
@@ -25,6 +29,8 @@ const Donate = () => {
       toast.error("Please enter a valid amount to donate.");
       return "#";
     }
+    // In a real app, this would initiate a payment. For demo, we'll just trigger confetti.
+    triggerConfetti(); // Trigger confetti on "pay" action
     return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&am=${amount}&cu=INR`;
   };
 

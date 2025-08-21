@@ -98,11 +98,25 @@ export default {
             opacity: '0',
           },
         },
+        "float-fade": {
+          '0%': {
+            transform: 'translateY(0) scale(0.8)',
+            opacity: '0',
+          },
+          '50%': {
+            opacity: '0.5',
+          },
+          '100%': {
+            transform: 'translateY(-100px) scale(1.2)',
+            opacity: '0',
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "sparkle": "sparkle 600ms cubic-bezier(0.25, 1, 0.5, 1) forwards",
+        "float-fade": "float-fade var(--animation-duration, 15s) ease-in-out infinite alternate",
       },
     },
   },

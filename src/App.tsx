@@ -9,8 +9,9 @@ import About from "./pages/About";
 import OurWork from "./pages/OurWork";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
-import TreeDonation from "./pages/TreeDonation"; // New import
+import TreeDonation from "./pages/TreeDonation";
 import NotFound from "./pages/NotFound";
+import { ConfettiProvider } from "./components/ConfettiProvider"; // New import
 
 const queryClient = new QueryClient();
 
@@ -19,19 +20,21 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/our-work" element={<OurWork />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/tree-donation" element={<TreeDonation />} /> {/* New Route */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <ConfettiProvider> {/* Wrap with ConfettiProvider */}
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/our-work" element={<OurWork />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/tree-donation" element={<TreeDonation />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </ConfettiProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

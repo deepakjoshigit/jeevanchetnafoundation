@@ -374,7 +374,7 @@ const Home = () => {
               Your support can help us reach more lives and create lasting change
             </p>
             <div className="space-x-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" variant="secondary" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+              <Button asChild size="lg" variant="secondary" className="text-primary-foreground">
                 <Link to="/donate">Donate Now</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10">

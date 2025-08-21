@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import SEO from "@/components/SEO"; // New import
 
 const projects = [
   {
@@ -25,27 +26,33 @@ const projects = [
 
 const OurWork = () => {
   return (
-    <div className="container mx-auto max-w-6xl py-12 px-4 md:px-6">
-      <div className="text-center space-y-4 mb-12">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary">Our Work</h1>
-        <p className="text-lg text-muted-foreground">
-          A glimpse into the initiatives that are making a difference.
-        </p>
+    <>
+      <SEO
+        title="Our Work | Jeevan Chetna Foundation"
+        description="Explore the impactful projects and initiatives of Jeevan Chetna Foundation, including educational support, health camps, women empowerment, and clean water projects."
+      />
+      <div className="container mx-auto max-w-6xl py-12 px-4 md:px-6">
+        <div className="text-center space-y-4 mb-12">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary">Our Work</h1>
+          <p className="text-lg text-muted-foreground">
+            A glimpse into the initiatives that are making a difference.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <Card key={index} className="overflow-hidden">
+              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+              <CardHeader>
+                <CardTitle className="text-foreground">{project.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-muted-foreground">{project.description}</CardDescription>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <Card key={index} className="overflow-hidden">
-            <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-            <CardHeader>
-              <CardTitle className="text-foreground">{project.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-muted-foreground">{project.description}</CardDescription>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 

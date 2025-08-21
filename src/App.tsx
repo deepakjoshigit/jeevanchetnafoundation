@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async'; // New import
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -11,29 +12,32 @@ import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
 import TreeDonation from "./pages/TreeDonation";
 import NotFound from "./pages/NotFound";
-import { ConfettiProvider } from "./components/ConfettiProvider"; // New import
+import { ConfettiProvider } from "./components/ConfettiProvider";
 
 const queryClient = new QueryClient();
+const helmetContext = {}; // Required for HelmetProvider
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <ConfettiProvider> {/* Wrap with ConfettiProvider */}
-        <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/our-work" element={<OurWork />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/donate" element={<Donate />} />
-              <Route path="/tree-donation" element={<TreeDonation />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
+      <ConfettiProvider>
+        <HelmetProvider context={helmetContext}> {/* Wrap BrowserRouter with HelmetProvider */}
+          <BrowserRouter>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/our-work" element={<OurWork />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/donate" element={<Donate />} />
+                <Route path="/tree-donation" element={<TreeDonation />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </BrowserRouter>
+        </HelmetProvider>
       </ConfettiProvider>
     </TooltipProvider>
   </QueryClientProvider>

@@ -374,13 +374,13 @@ const Home = () => {
               Your support can help us reach more lives and create lasting change
             </p>
             <div className="space-x-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" variant="secondary" className="text-primary-foreground">
+              <Button asChild size="lg" className="bg-white text-primary hover:bg-gray-100">
                 <Link to="/donate">Donate Now</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Link to="/contact">Volunteer</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 <Link to="/our-work">See Our Work</Link>
               </Button>
             </div>

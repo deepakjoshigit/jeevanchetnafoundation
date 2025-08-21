@@ -86,9 +86,17 @@ export default {
           },
         },
         "sparkle": {
-          '0%': { transform: 'translate(-50%, -50%) scale(0)', opacity: '1' },
-          '50%': { opacity: '1' },
-          '100%': { transform: 'translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.5)', opacity: '0' },
+          '0%': {
+            transform: 'translate(-50%, -50%) scale(0) rotate(0deg)',
+            opacity: '0.8',
+          },
+          '20%': {
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.5) rotate(var(--rotate))',
+            opacity: '0',
+          },
         },
       },
       animation: {

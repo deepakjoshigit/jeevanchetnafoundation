@@ -5,6 +5,8 @@ interface Sparkle {
   x: number;
   y: number;
   color: string;
+  size: number;
+  rotation: number;
 }
 
 const colors = [
@@ -16,11 +18,13 @@ const ClickSparkles = () => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
 
   const createSparkles = useCallback((e: MouseEvent) => {
-    const newSparkles: Sparkle[] = Array.from({ length: 7 }).map((_, i) => ({
+    const newSparkles: Sparkle[] = Array.from({ length: 10 }).map((_, i) => ({
       id: `sparkle-${Date.now()}-${i}`,
       x: e.clientX,
       y: e.clientY,
       color: colors[Math.floor(Math.random() * colors.length)],
+      size: Math.random() * 5 + 5, // Random size between 5px and 10px
+      rotation: Math.random() * 360, // Random rotation
     }));
 
     setSparkles(s => [...s, ...newSparkles]);
@@ -41,20 +45,21 @@ const ClickSparkles = () => {
 
   return (
     <>
-      {sparkles.map(({ id, x, y, color }) => (
+      {sparkles.map(({ id, x, y, color, size, rotation }) => (
         <div
           key={id}
           className="absolute rounded-full animate-sparkle pointer-events-none z-50"
           style={{
             left: x,
             top: y,
-            width: '8px',
-            height: '8px',
+            width: `${size}px`,
+            height: `${size}px`,
             backgroundColor: color,
             transform: 'translate(-50%, -50%)',
             '--dx': `${(Math.random() - 0.5) * 100}px`,
             '--dy': `${(Math.random() - 0.5) * 100}px`,
-          }}
+            '--rotate': `${rotation}deg`,
+          } as React.CSSProperties}
         />
       ))}
     </>

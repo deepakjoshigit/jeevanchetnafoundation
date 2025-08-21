@@ -44,20 +44,20 @@ const TreeDonation = () => {
         {treePackages.map((pkg, index) => (
           <Card key={index} className="flex flex-col justify-between hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
-              <Leaf className="h-12 w-12 text-green-600 mx-auto mb-4" />
-              <CardTitle className="text-2xl font-bold">{pkg.title}</CardTitle>
+              <Leaf className="h-12 w-12 text-primary mx-auto mb-4" />
+              <CardTitle className="text-2xl font-bold text-foreground">{pkg.title}</CardTitle>
               <CardDescription className="text-lg text-primary">{pkg.price}</CardDescription>
             </CardHeader>
             <CardContent className="flex-grow space-y-4">
               <p className="text-muted-foreground text-center">{pkg.description}</p>
               <div className="text-center">
-                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <p className="text-sm font-semibold text-foreground">
                   Estimated Trees Planted: {pkg.trees}
                 </p>
               </div>
             </CardContent>
             <div className="p-6 pt-0">
-              <Button asChild className="w-full">
+              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link to="/donate">Donate Now</Link>
               </Button>
             </div>

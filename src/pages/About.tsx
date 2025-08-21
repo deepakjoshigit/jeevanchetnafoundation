@@ -29,7 +29,7 @@ const About = () => {
           <CardHeader>
             <CardTitle className="text-primary">Our Mission & Vision</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 text-gray-600 dark:text-gray-300">
+          <CardContent className="space-y-4 text-foreground">
             <p>
               <strong>Mission:</strong> To empower marginalized communities through comprehensive initiatives in education, healthcare, and sustainable livelihoods. We strive to create a society where every individual has the opportunity to live a life of dignity and self-reliance.
             </p>

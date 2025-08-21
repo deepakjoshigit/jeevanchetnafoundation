@@ -39,7 +39,7 @@ const Donate = () => {
 
       <Card>
         <CardHeader>
-          <CardTitle>Donate via UPI</CardTitle>
+          <CardTitle className="text-primary">Donate via UPI</CardTitle>
           <CardDescription>Scan the QR code or use the UPI ID to donate instantly.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -61,15 +61,15 @@ const Donate = () => {
                 min="1"
               />
             </div>
-            <Button asChild className="w-full max-w-sm" disabled={!amount || parseFloat(amount) <= 0}>
+            <Button asChild className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground" disabled={!amount || parseFloat(amount) <= 0}>
               <a href={generateUpiLink()}>Pay with UPI App</a>
             </Button>
-            <Button asChild className="w-full max-w-sm" disabled={!amount || parseFloat(amount) <= 0}>
+            <Button asChild className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground" disabled={!amount || parseFloat(amount) <= 0}>
               <a href={generateUpiLink()}>Direct Pay</a>
             </Button>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold">Our UPI ID</h3>
+            <h3 className="font-semibold text-foreground">Our UPI ID</h3>
             <div className="flex items-center space-x-2">
               <p className="text-muted-foreground font-mono">{upiId}</p>
               <Button variant="ghost" size="icon" onClick={handleCopyUpi}>
@@ -83,12 +83,12 @@ const Donate = () => {
 
       <Card className="mt-6">
         <CardHeader>
-          <CardTitle>Bank Transfer</CardTitle>
+          <CardTitle className="text-primary">Bank Transfer</CardTitle>
           <CardDescription>Direct bank transfer details</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <h3 className="font-semibold">Account Name</h3>
+            <h3 className="font-semibold text-foreground">Account Name</h3>
             <div className="flex items-center space-x-2">
               <p className="text-muted-foreground">Jeevan Chetna Foundation</p>
               <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("Jeevan Chetna Foundation")}>
@@ -98,7 +98,7 @@ const Donate = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold">Account Number</h3>
+            <h3 className="font-semibold text-foreground">Account Number</h3>
             <div className="flex items-center space-x-2">
               <p className="text-muted-foreground">44208565753</p>
               <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("44208565753")}>
@@ -108,7 +108,7 @@ const Donate = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold">IFSC Code</h3>
+            <h3 className="font-semibold text-foreground">IFSC Code</h3>
             <div className="flex items-center space-x-2">
               <p className="text-muted-foreground">SBIN0000646</p>
               <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("SBIN0000646")}>
@@ -118,7 +118,7 @@ const Donate = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold">Bank Name</h3>
+            <h3 className="font-semibold text-foreground">Bank Name</h3>
             <div className="flex items-center space-x-2">
               <p className="text-muted-foreground">State Bank of India</p>
               <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("State Bank of India")}>
@@ -128,7 +128,7 @@ const Donate = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold">Branch</h3>
+            <h3 className="font-semibold text-foreground">Branch</h3>
             <div className="flex items-center space-x-2">
               <p className="text-muted-foreground">Haldwani Main Branch</p>
               <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("Haldwani Main Branch")}>

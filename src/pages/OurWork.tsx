@@ -27,8 +27,8 @@ const OurWork = () => {
   return (
     <div className="container mx-auto max-w-6xl py-12 px-4 md:px-6">
       <div className="text-center space-y-4 mb-12">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Work</h1>
-        <p className="text-lg text-gray-500 dark:text-gray-400">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary">Our Work</h1>
+        <p className="text-lg text-muted-foreground">
           A glimpse into the initiatives that are making a difference.
         </p>
       </div>
@@ -37,10 +37,10 @@ const OurWork = () => {
           <Card key={index} className="overflow-hidden">
             <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
             <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
+              <CardTitle className="text-foreground">{project.title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>{project.description}</CardDescription>
+              <CardDescription className="text-muted-foreground">{project.description}</CardDescription>
             </CardContent>
           </Card>
         ))}

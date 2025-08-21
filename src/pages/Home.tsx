@@ -177,11 +177,11 @@ const Home = () => {
                         <p className="text-lg md:text-xl">
                           {slide.description}
                         </p>
-                        <div className="space-x-4">
-                          <Button asChild size="lg">
+                        <div className="space-x-4 mt-6">
+                          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                             <Link to="/donate">Donate Now</Link>
                           </Button>
-                          <Button variant="secondary" asChild size="lg">
+                          <Button variant="secondary" asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
                             <Link to="/about">Learn More</Link>
                           </Button>
                         </div>
@@ -197,7 +197,7 @@ const Home = () => {
         </section>
 
         {/* Mission Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-background to-secondary/20">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -224,7 +224,7 @@ const Home = () => {
         </section>
 
         {/* Key Initiatives */}
-        <section className="w-full py-12 md:py-24 bg-gray-50">
+        <section className="w-full py-12 md:py-24 bg-secondary/10">
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">Our Key Initiatives</h2>
@@ -283,7 +283,7 @@ const Home = () => {
         </section>
 
         {/* Upcoming Events */}
-        <section className="w-full py-12 md:py-24 bg-gradient-to-r from-blue-50 to-purple-50">
+        <section className="w-full py-12 md:py-24 bg-gradient-to-r from-secondary/20 to-primary/10">
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">Upcoming Events</h2>
@@ -305,7 +305,7 @@ const Home = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{event.description}</p>
-                    <Button variant="link" className="mt-4 px-0">
+                    <Button variant="link" className="mt-4 px-0 text-primary hover:text-primary/80">
                       Learn More →
                     </Button>
                   </CardContent>
@@ -343,7 +343,7 @@ const Home = () => {
         </section>
 
         {/* Testimonials */}
-        <section className="w-full py-12 md:py-24 bg-gradient-to-r from-blue-100 to-purple-100">
+        <section className="w-full py-12 md:py-24 bg-gradient-to-r from-secondary/30 to-accent/20">
           <div className="container px-4 md:px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">Stories of Change</h2>
@@ -356,8 +356,8 @@ const Home = () => {
                 <Card key={index} className="bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <blockquote className="space-y-4">
-                      <p className="text-lg italic">"{testimonial.quote}"</p>
-                      <footer className="font-medium">{testimonial.author}</footer>
+                      <p className="text-lg italic text-foreground">"{testimonial.quote}"</p>
+                      <footer className="font-medium text-muted-foreground">{testimonial.author}</footer>
                     </blockquote>
                   </CardContent>
                 </Card>
@@ -373,14 +373,14 @@ const Home = () => {
             <p className="max-w-[700px] mx-auto text-lg mb-8">
               Your support can help us reach more lives and create lasting change
             </p>
-            <div className="space-x-4">
-              <Button asChild size="lg" variant="secondary">
+            <div className="space-x-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild size="lg" variant="secondary" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
                 <Link to="/donate">Donate Now</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-primary">
+              <Button asChild size="lg" variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10">
                 <Link to="/contact">Volunteer</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-primary">
+              <Button asChild size="lg" variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10">
                 <Link to="/our-work">See Our Work</Link>
               </Button>
             </div>

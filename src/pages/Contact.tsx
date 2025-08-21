@@ -18,14 +18,14 @@ const Contact = () => {
           <div className="flex items-start gap-4">
             <MapPin className="h-6 w-6 mt-1 text-primary" />
             <div>
-              <h3 className="font-semibold">Address</h3>
+              <h3 className="font-semibold text-foreground">Address</h3>
               <p className="text-muted-foreground">Haldwani, Uttarakhand, India</p>
             </div>
           </div>
           <div className="flex items-start gap-4">
             <Phone className="h-6 w-6 mt-1 text-primary" />
             <div>
-              <h3 className="font-semibold">Phone</h3>
+              <h3 className="font-semibold text-foreground">Phone</h3>
               <a href="tel:8958521254" className="text-muted-foreground hover:underline">8958521254</a>
               <br />
               <a href="tel:9012146420" className="text-muted-foreground hover:underline">9012146420</a>
@@ -34,7 +34,7 @@ const Contact = () => {
           <div className="flex items-start gap-4">
             <Mail className="h-6 w-6 mt-1 text-primary" />
             <div>
-              <h3 className="font-semibold">Email</h3>
+              <h3 className="font-semibold text-foreground">Email</h3>
               <a href="mailto:info@jeevanchetnafoundation.org" className="text-muted-foreground hover:underline">
                 info@jeevanchetnafoundation.org
               </a>

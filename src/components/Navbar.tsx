@@ -14,7 +14,7 @@ const Navbar = () => {
     { to: "/", text: "Home" },
     { to: "/about", text: "About Us" },
     { to: "/our-work", text: "Our Work" },
-    { to: "/tree-donation", text: "Tree Donation" }, // New link
+    { to: "/tree-donation", text: "Tree Donation" },
     { to: "/contact", text: "Contact" },
   ];
 
@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center gap-2">
           <Logo />
-          <span className="font-bold text-lg">Jeevan Chetna Foundation</span>
+          <span className="font-bold text-lg text-foreground">Jeevan Chetna Foundation</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
@@ -43,7 +43,7 @@ const Navbar = () => {
           ))}
         </nav>
         <div className="hidden md:block">
-          <Button asChild>
+          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Link to="/donate">Donate Now</Link>
           </Button>
         </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
             <div className="grid gap-4 p-4">
               <Link to="/" className="flex items-center gap-2" onClick={closeSheet}>
                 <Logo />
-                <span className="font-bold">JCF</span>
+                <span className="font-bold text-foreground">JCF</span>
               </Link>
               {navLinks.map((link) => (
                 <NavLink
@@ -76,7 +76,7 @@ const Navbar = () => {
                   {link.text}
                 </NavLink>
               ))}
-              <Button asChild className="w-full" onClick={closeSheet}>
+              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" onClick={closeSheet}>
                 <Link to="/donate">Donate Now</Link>
               </Button>
             </div>

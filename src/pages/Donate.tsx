@@ -7,7 +7,7 @@ import { useState, useCallback } from "react";
 import { toast } from "sonner";
 import { useConfetti } from "@/components/ConfettiProvider";
 import SEO from "@/components/SEO";
-import QRCode from "qrcode.react"; // Import QRCode
+import { QRCode } from "qrcode.react"; // Changed to named import
 
 const Donate = () => {
   const upiId = "jeevanchetna@sbi";

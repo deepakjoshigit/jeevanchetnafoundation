@@ -3,11 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Copy } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 import { useConfetti } from "@/components/ConfettiProvider";
-import SEO from "@/components/SEO";
-import QRCode from "qrcode.react"; // Import QRCode
+import SEO from "@/components/SEO"; // New import
 
 const Donate = () => {
   const upiId = "jeevanchetna@sbi";
@@ -26,27 +25,15 @@ const Donate = () => {
     triggerConfetti();
   };
 
-  // Use useCallback to memoize the UPI link generation
-  const getUpiLink = useCallback(() => {
+  const generateUpiLink = () => {
     if (!amount || parseFloat(amount) <= 0) {
-      return ""; // Return empty string if amount is invalid
-    }
-    // Construct the UPI deep link
-    return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&am=${amount}&cu=INR`;
-  }, [amount, upiId]);
-
-  const handleUpiPayment = () => {
-    const link = getUpiLink();
-    if (link) {
-      triggerConfetti();
-      toast.success("Opening UPI app...");
-      window.location.href = link; // Attempt to open UPI app
-    } else {
       toast.error("Please enter a valid amount to donate.");
+      return "#";
     }
+    // In a real app, this would initiate a payment. For demo, we'll just trigger confetti.
+    triggerConfetti();
+    return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&am=${amount}&cu=INR`;
   };
-
-  const isValidAmount = parseFloat(amount) > 0;
 
   return (
     <>
@@ -69,17 +56,12 @@ const Donate = () => {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="flex flex-col items-center gap-4">
-              {/* Dynamic QR code */}
-              {isValidAmount ? (
-                <div className="p-2 border border-gray-200 rounded-lg">
-                  <QRCode value={getUpiLink()} size={192} level="H" />
-                </div>
-              ) : (
-                <div className="w-48 h-48 flex items-center justify-center bg-gray-100 rounded-lg text-muted-foreground text-center">
-                  Enter amount to generate QR
-                </div>
-              )}
-
+              {/* Display the static QR code image */}
+              <img
+                src="/jeevanchetna.jpg"
+                alt="Jeevan Chetna Foundation UPI QR Code"
+                className="w-48 h-48 object-contain rounded-lg"
+              />
               <div className="w-full max-w-sm space-y-2">
                 <Label htmlFor="amount">Donation Amount (INR)</Label>
                 <Input
@@ -91,12 +73,11 @@ const Donate = () => {
                   min="1"
                 />
               </div>
-              <Button
-                className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground"
-                onClick={handleUpiPayment}
-                disabled={!isValidAmount}
-              >
-                Pay with UPI App
+              <Button asChild className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground" disabled={!amount || parseFloat(amount) <= 0}>
+                <a href={generateUpiLink()}>Pay with UPI App</a>
+              </Button>
+              <Button asChild className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground" disabled={!amount || parseFloat(amount) <= 0}>
+                <a href={generateUpiLink()}>Direct Pay</a>
               </Button>
             </div>
             <div className="space-y-2">

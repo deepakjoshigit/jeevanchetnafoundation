@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BookOpen, HandHeart, Leaf, Code, Brain, Lightbulb } from "lucide-react";
-import SEO from "@/components/SEO"; // New import
+import SEO from "@/components/SEO";
 
 const teamMembers = [
   { name: "Deepak Joshi", role: "Director", avatar: "https://github.com/shadcn.png", fallback: "DJ" },
@@ -42,6 +42,70 @@ const About = () => {
               <p>
                 <strong>Vision:</strong> We envision a world where equitable opportunities lead to a just and sustainable society. Our goal is to be a catalyst for positive change, fostering an environment of growth, learning, and well-being for all.
               </p>
+            </CardContent>
+          </Card>
+
+          {/* Company Details Section */}
+          <div className="text-center pt-8">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-primary">Company Details</h2>
+            <p className="mt-3 text-md text-muted-foreground">
+              Legal and registration information about Jeevan Chetna Foundation.
+            </p>
+          </div>
+          <Card>
+            <CardContent className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-foreground">
+              <div>
+                <p className="font-semibold">Corporate Identification Number (CIN):</p>
+                <p className="text-muted-foreground">U85500UT2025NPL019366</p>
+              </div>
+              <div>
+                <p className="font-semibold">Company Registration Number:</p>
+                <p className="text-muted-foreground">019366</p>
+              </div>
+              <div>
+                <p className="font-semibold">Incorporation Date:</p>
+                <p className="text-muted-foreground">9th June, 2025</p>
+              </div>
+              <div>
+                <p className="font-semibold">Company Type:</p>
+                <p className="text-muted-foreground">Private, Non-govt company</p>
+              </div>
+              <div>
+                <p className="font-semibold">Registered At:</p>
+                <p className="text-muted-foreground">Registrar of Companies (RoC), RoC-Uttarakhand</p>
+              </div>
+              <div>
+                <p className="font-semibold">Authorized Share Capital:</p>
+                <p className="text-muted-foreground">₹1,00,000</p>
+              </div>
+              <div>
+                <p className="font-semibold">Paid-up Capital:</p>
+                <p className="text-muted-foreground">₹10,000</p>
+              </div>
+              <div>
+                <p className="font-semibold">Current Status:</p>
+                <p className="text-muted-foreground">Active</p>
+              </div>
+              <div className="md:col-span-2">
+                <p className="font-semibold">Primary Activity:</p>
+                <p className="text-muted-foreground">Educational support services</p>
+              </div>
+              <div className="md:col-span-2">
+                <p className="font-semibold">Registered Office Address:</p>
+                <p className="text-muted-foreground">C/o Pravin, Chhadayal, Aabad, Haripur Nayak, Haldwani, Nainital, Haldwani, Uttarakhand, India, 263139</p>
+              </div>
+              <div className="md:col-span-2">
+                <p className="font-semibold">Directors/Key Management Personnel:</p>
+                <p className="text-muted-foreground">PRAVIN KUMAR PANDEY, DEEPAK JOSHI</p>
+              </div>
+              <div className="md:col-span-2">
+                <p className="font-semibold">Last Annual General Meeting (AGM):</p>
+                <p className="text-muted-foreground">N/A</p>
+              </div>
+              <div className="md:col-span-2">
+                <p className="font-semibold">Last Financials Update:</p>
+                <p className="text-muted-foreground">N/A</p>
+              </div>
             </CardContent>
           </Card>
 

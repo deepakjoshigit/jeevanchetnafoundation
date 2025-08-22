@@ -1,16 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Label } from "@/components/ui/label"; // Keep Label for general use if needed, though not for amount
 import { Copy } from "lucide-react";
-import { useState } from "react";
+import { useState } from "react"; // Keep useState for other states if any, or remove if not needed
 import { toast } from "sonner";
 import { useConfetti } from "@/components/ConfettiProvider";
-import SEO from "@/components/SEO"; // New import
+import SEO from "@/components/SEO";
 
 const Donate = () => {
   const upiId = "jeevanchetna@sbi";
-  const [amount, setAmount] = useState<string>("");
+  // Removed amount state as per request
   const { triggerConfetti } = useConfetti();
 
   const handleCopyUpi = () => {
@@ -25,14 +24,10 @@ const Donate = () => {
     triggerConfetti();
   };
 
+  // Simplified UPI link generation without amount
   const generateUpiLink = () => {
-    if (!amount || parseFloat(amount) <= 0) {
-      toast.error("Please enter a valid amount to donate.");
-      return "#";
-    }
-    // In a real app, this would initiate a payment. For demo, we'll just trigger confetti.
-    triggerConfetti();
-    return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&am=${amount}&cu=INR`;
+    triggerConfetti(); // Trigger confetti on attempting to open UPI app
+    return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&cu=INR`;
   };
 
   return (
@@ -49,47 +44,37 @@ const Donate = () => {
           </p>
         </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-primary">Donate via UPI</CardTitle>
-            <CardDescription>Scan the QR code or use the UPI ID to donate instantly.</CardDescription>
+        <Card className="mb-6">
+          <CardHeader className="text-center">
+            <CardTitle className="text-primary text-3xl">Donate via BHIM UPI</CardTitle>
+            <CardDescription className="text-lg">Scan the QR code or use our UPI ID to donate instantly.</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="flex flex-col items-center gap-4">
-              {/* Display the static QR code image */}
+          <CardContent className="space-y-8 flex flex-col items-center">
+            {/* Prominent QR Code */}
+            <div className="p-4 bg-white rounded-lg shadow-lg border border-gray-200">
               <img
                 src="/jeevanchetna.jpg"
                 alt="Jeevan Chetna Foundation UPI QR Code"
-                className="w-48 h-48 object-contain rounded-lg"
+                className="w-64 h-64 object-contain rounded-md"
               />
-              <div className="w-full max-w-sm space-y-2">
-                <Label htmlFor="amount">Donation Amount (INR)</Label>
-                <Input
-                  id="amount"
-                  type="number"
-                  placeholder="e.g., 500"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                  min="1"
-                />
-              </div>
-              <Button asChild className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground" disabled={!amount || parseFloat(amount) <= 0}>
-                <a href={generateUpiLink()}>Pay with UPI App</a>
-              </Button>
-              <Button asChild className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground" disabled={!amount || parseFloat(amount) <= 0}>
-                <a href={generateUpiLink()}>Direct Pay</a>
-              </Button>
             </div>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Our UPI ID</h3>
-              <div className="flex items-center space-x-2">
-                <p className="text-muted-foreground font-mono">{upiId}</p>
-                <Button variant="ghost" size="icon" onClick={handleCopyUpi}>
-                  <Copy className="h-4 w-4" />
+
+            {/* UPI ID with Copy Button */}
+            <div className="w-full max-w-sm space-y-2 text-center">
+              <Label className="text-lg font-semibold text-foreground">Our UPI ID</Label>
+              <div className="flex items-center justify-center space-x-2">
+                <p className="text-muted-foreground font-mono text-xl">{upiId}</p>
+                <Button variant="ghost" size="icon" onClick={handleCopyUpi} className="text-primary hover:text-primary/80">
+                  <Copy className="h-5 w-5" />
                   <span className="sr-only">Copy UPI ID</span>
                 </Button>
               </div>
             </div>
+
+            {/* Direct Pay Button */}
+            <Button asChild className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6">
+              <a href={generateUpiLink()}>Pay with BHIM UPI App</a>
+            </Button>
           </CardContent>
         </Card>
 

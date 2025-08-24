@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Menu, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 
 const Navbar = () => {
@@ -10,10 +11,8 @@ const Navbar = () => {
 
   const closeSheet = () => setIsSheetOpen(false);
 
-  const navLinks = [
+  const mainNavLinks = [
     { to: "/", text: "Home" },
-    { to: "/about", text: "About Us" },
-    { to: "/about/documents", text: "Documents" }, // New link
     { to: "/our-work", text: "Our Work" },
     { to: "/tree-donation", text: "Tree Donation" },
     { to: "/contact", text: "Contact" },
@@ -27,7 +26,7 @@ const Navbar = () => {
           <span className="font-bold text-lg text-foreground">Jeevan Chetna Foundation</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
+          {mainNavLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
@@ -42,6 +41,26 @@ const Navbar = () => {
               {link.text}
             </NavLink>
           ))}
+          {/* About Us Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary">
+                About Us <ChevronDown className="ml-1 h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuItem asChild>
+                <NavLink to="/about" className="block px-2 py-1.5 text-sm">
+                  Our Story
+                </NavLink>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <NavLink to="/about/documents" className="block px-2 py-1.5 text-sm">
+                  Our Documents
+                </NavLink>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
         <div className="hidden md:block">
           <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -61,7 +80,7 @@ const Navbar = () => {
                 <Logo />
                 <span className="font-bold text-foreground">JCF</span>
               </Link>
-              {navLinks.map((link) => (
+              {mainNavLinks.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
@@ -77,6 +96,36 @@ const Navbar = () => {
                   {link.text}
                 </NavLink>
               ))}
+              {/* About Us links in mobile sheet */}
+              <div className="space-y-2">
+                <p className="text-base font-medium text-muted-foreground">About Us</p>
+                <NavLink
+                  to="/about"
+                  onClick={closeSheet}
+                  className={({ isActive }) =>
+                    `ml-4 block text-base font-medium transition-colors hover:text-primary ${
+                      isActive
+                        ? "text-primary font-semibold"
+                        : "text-muted-foreground"
+                    }`
+                  }
+                >
+                  Our Story
+                </NavLink>
+                <NavLink
+                  to="/about/documents"
+                  onClick={closeSheet}
+                  className={({ isActive }) =>
+                    `ml-4 block text-base font-medium transition-colors hover:text-primary ${
+                      isActive
+                        ? "text-primary font-semibold"
+                        : "text-muted-foreground"
+                    }`
+                  }
+                >
+                  Our Documents
+                </NavLink>
+              </div>
               <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" onClick={closeSheet}>
                 <Link to="/donate">Donate Now</Link>
               </Button>

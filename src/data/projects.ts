@@ -1,54 +1,104 @@
 export const projects = [
   {
-    id: "educational-support",
+    id: "education-support",
     title: "Educational Support Program",
-    description: "Providing free tuition, school supplies, and mentorship to over 500 children in rural areas.",
-    image: "https://images.unsplash.com/photo-1546410531-bb45ec967689?q=80&w=1200&auto=format&fit=crop",
-    fullContent: `
-      <p class="mb-4">The Educational Support Program is a cornerstone of the Jeevan Chetna Foundation's mission to empower the next generation. We believe that education is the most powerful tool for socio-economic upliftment. Our program focuses on providing comprehensive support to underprivileged children in rural and underserved communities.</p>
-      <p class="mb-4">Each year, we identify over 500 children who lack access to quality education. We provide them with free tuition classes, ensuring they receive the academic assistance needed to excel. Beyond just academics, we supply essential school materials, including textbooks, notebooks, pens, and uniforms, removing financial barriers that often prevent children from attending school.</p>
-      <p class="mb-4">A unique aspect of our program is the mentorship initiative. We connect children with dedicated mentors who guide them through their academic journey, offer emotional support, and inspire them to pursue their dreams. These mentors act as role models, fostering confidence and a love for learning.</p>
-      <p class="mb-4">Our impact extends beyond the classroom. We organize workshops on life skills, hygiene, and environmental awareness, ensuring holistic development. We also work closely with parents and local communities to create a supportive environment for learning, emphasizing the long-term benefits of education.</p>
-      <p>Through the Educational Support Program, we are not just educating children; we are building a brighter future, one student at a time, equipping them with the knowledge and skills to break the cycle of poverty and contribute positively to society.</p>
-    `,
+    description: "Providing quality education and resources to underprivileged children.",
+    image: "https://picsum.photos/seed/education/800/600",
+    fullDescription: "Our Educational Support Program focuses on ensuring every child has access to quality education. We provide school supplies, tuition fees, and after-school tutoring to help students excel academically and build a brighter future. We also organize workshops and mentorship programs to foster holistic development.",
+    details: [
+      "Provided school kits to 500+ students.",
+      "Supported 150+ students with tuition fees.",
+      "Established 3 community learning centers."
+    ],
+    gallery: [
+      "https://picsum.photos/seed/education1/1200/800",
+      "https://picsum.photos/seed/education2/1200/800",
+      "https://picsum.photos/seed/education3/1200/800"
+    ]
   },
   {
-    id: "community-health-camps",
+    id: "health-camps",
     title: "Community Health Camps",
-    description: "Organizing monthly health check-up camps, providing free medical consultations and medicines.",
-    image: "https://images.unsplash.com/photo-1532938911079-cd88517ba765?q=80&w=1200&auto=format&fit=crop",
-    fullContent: `
-      <p class="mb-4">Access to basic healthcare is a fundamental right, yet many communities, especially in remote areas, lack adequate medical facilities. The Jeevan Chetna Foundation's Community Health Camps aim to bridge this gap by bringing essential medical services directly to those in need.</p>
-      <p class="mb-4">We organize monthly health check-up camps in various villages and urban slums. These camps are staffed by volunteer doctors, nurses, and medical professionals who provide free consultations, diagnoses, and basic treatments. We focus on preventive care, early detection of diseases, and health education.</p>
-      <p class="mb-4">During these camps, beneficiaries receive free medicines for common ailments, vaccinations, and nutritional supplements. We also conduct screenings for prevalent health issues like diabetes, hypertension, and anemia. For more serious conditions, we facilitate referrals to larger hospitals and provide guidance on accessing further medical care.</p>
-      <p class="mb-4">Beyond treatment, a significant part of our health camps involves raising awareness about hygiene, sanitation, family planning, and the importance of regular check-ups. We empower communities with knowledge to make informed decisions about their health and well-being.</p>
-      <p>Our Community Health Camps are a lifeline for many, ensuring that health is not a privilege but an accessible right for everyone, fostering healthier and more productive communities.</p>
-    `,
+    description: "Organizing free health check-ups and medical assistance for rural communities.",
+    image: "https://picsum.photos/seed/health/800/600",
+    fullDescription: "Our Community Health Camps bring essential medical services to remote and underserved areas. We conduct free health check-ups, provide basic medicines, and raise awareness about hygiene and preventive healthcare. Our team of doctors and volunteers works tirelessly to improve community health.",
+    details: [
+      "Conducted 20+ health camps annually.",
+      "Reached over 3,000 individuals with medical services.",
+      "Distributed essential medicines and health supplements."
+    ],
+    gallery: [
+      "https://picsum.photos/seed/health1/1200/800",
+      "https://picsum.photos/seed/health2/1200/800",
+      "https://picsum.photos/seed/health3/1200/800"
+    ]
   },
   {
     id: "women-empowerment",
-    title: "Women Empowerment Initiative",
-    description: "Skill development workshops and financial literacy programs for women to foster entrepreneurship.",
-    image: "https://images.unsplash.com/photo-1524508762098-fd9f6a6b2777?q=80&w=1200&auto=format&fit=crop",
-    fullContent: `
-      <p class="mb-4">The Women Empowerment Initiative by Jeevan Chetna Foundation is dedicated to fostering economic independence and social upliftment among women. We believe that empowering women is crucial for the overall development of families and communities.</p>
-      <p class="mb-4">Our program offers a range of skill development workshops tailored to local needs and market demands. These include training in tailoring, handicraft making, computer literacy, beautician courses, and agricultural techniques. The goal is to equip women with practical skills that enable them to generate income and become self-reliant.</p>
-      <p class="mb-4">Financial literacy is another key component. We conduct workshops on basic accounting, saving, investment, and accessing micro-finance opportunities. This knowledge empowers women to manage their finances effectively, start small businesses, and contribute to their household income.</p>
-      <p class="mb-4">We also facilitate the formation of self-help groups (SHGs) where women can pool resources, support each other, and collectively address challenges. These groups often lead to successful micro-enterprises and provide a strong social network.</p>
-      <p>Through this initiative, we are not just providing skills; we are building confidence, fostering leadership, and creating a supportive ecosystem where women can thrive as entrepreneurs and active participants in their communities, leading to a more equitable society.</p>
-    `,
+    title: "Women Empowerment Initiatives",
+    description: "Empowering women through skill development, vocational training, and entrepreneurship.",
+    image: "https://picsum.photos/seed/women/800/600",
+    fullDescription: "Our Women Empowerment Initiatives aim to uplift women by providing them with the tools and opportunities to become self-reliant. We offer skill development workshops, vocational training in various trades, and support for starting small businesses. We believe in fostering economic independence and social equality.",
+    details: [
+      "Trained 200+ women in tailoring and handicrafts.",
+      "Facilitated micro-loans for 50+ women entrepreneurs.",
+      "Organized awareness campaigns on women's rights."
+    ],
+    gallery: [
+      "https://picsum.photos/seed/women1/1200/800",
+      "https://picsum.photos/seed/women2/1200/800",
+      "https://picsum.photos/seed/women3/1200/800"
+    ]
   },
   {
     id: "clean-water-project",
-    title: "Clean Water Project",
-    description: "Installation of water purification systems in villages facing water scarcity and contamination issues.",
-    image: "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?q=80&w=1200&auto=format&fit=crop",
-    fullContent: `
-      <p class="mb-4">Access to clean and safe drinking water is a fundamental human right and essential for health and well-being. The Jeevan Chetna Foundation's Clean Water Project addresses the critical issue of water scarcity and contamination in vulnerable communities.</p>
-      <p class="mb-4">We identify villages and regions that suffer from a lack of potable water or where existing water sources are contaminated, leading to waterborne diseases. Our primary intervention involves the installation of advanced water purification systems, such as RO plants or community-level filtration units, making safe drinking water accessible to hundreds of families.</p>
-      <p class="mb-4">Beyond installation, we focus on sustainability. We train local community members to operate and maintain these systems, ensuring their long-term functionality. We also conduct awareness campaigns on water conservation, hygiene practices, and the importance of using purified water.</p>
-      <p class="mb-4">The impact of the Clean Water Project is profound. It significantly reduces the incidence of waterborne diseases, improves public health, and frees up time for women and children who previously spent hours fetching water from distant or unsafe sources. This time can now be dedicated to education, economic activities, and other productive endeavors.</p>
-      <p>By providing clean water, we are not just quenching thirst; we are fostering health, dignity, and a better quality of life for entire communities, laying the foundation for sustainable development.</p>
-    `,
+    title: "Clean Water Access Project",
+    description: "Ensuring access to safe and clean drinking water in remote villages.",
+    image: "https://picsum.photos/seed/water/800/600",
+    fullDescription: "The Clean Water Access Project is dedicated to providing safe and potable drinking water to communities that lack this basic necessity. We install water purification systems, dig borewells, and educate villagers on water conservation and sanitation practices. Access to clean water is fundamental for health and development.",
+    details: [
+      "Installed 10+ water purification units.",
+      "Provided clean water to 10,000+ villagers.",
+      "Conducted hygiene and sanitation workshops."
+    ],
+    gallery: [
+      "https://picsum.photos/seed/water1/1200/800",
+      "https://picsum.photos/seed/water2/1200/800",
+      "https://picsum.photos/seed/water3/1200/800"
+    ]
   },
+  {
+    id: "environmental-conservation",
+    title: "Environmental Conservation",
+    description: "Promoting sustainable practices and protecting natural resources.",
+    image: "https://picsum.photos/seed/environment/800/600",
+    fullDescription: "Our Environmental Conservation program focuses on protecting our planet for future generations. We organize tree-planting drives, waste management campaigns, and promote the use of renewable energy. We also educate communities on the importance of biodiversity and sustainable living.",
+    details: [
+      "Planted over 1,000 trees in local communities.",
+      "Organized monthly clean-up drives.",
+      "Conducted workshops on composting and recycling."
+    ],
+    gallery: [
+      "https://picsum.photos/seed/environment1/1200/800",
+      "https://picsum.photos/seed/environment2/1200/800",
+      "https://picsum.photos/seed/environment3/1200/800"
+    ]
+  },
+  {
+    id: "disaster-relief",
+    title: "Disaster Relief and Rehabilitation",
+    description: "Providing immediate aid and long-term support to disaster-affected communities.",
+    image: "https://picsum.photos/seed/disaster/800/600",
+    fullDescription: "In times of crisis, our Disaster Relief and Rehabilitation program provides immediate humanitarian aid to communities affected by natural disasters. We distribute food, water, shelter, and medical supplies, and also support long-term rehabilitation efforts to help communities rebuild their lives.",
+    details: [
+      "Provided aid to 3 major disaster-hit regions.",
+      "Distributed emergency kits to 2,000+ families.",
+      "Supported reconstruction of 50+ homes."
+    ],
+    gallery: [
+      "https://picsum.photos/seed/disaster1/1200/800",
+      "https://picsum.photos/seed/disaster2/1200/800",
+      "https://picsum.photos/seed/disaster3/1200/800"
+    ]
+  }
 ];

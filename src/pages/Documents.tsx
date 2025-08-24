@@ -53,11 +53,11 @@ const Documents: React.FC = () => {
                   </CardContent>
                 </Card>
               </DialogTrigger>
-              <DialogContent className="max-w-screen-xl h-[90vh] p-0">
+              <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 overflow-auto"> {/* Adjusted for responsiveness */}
                 <img
                   src={doc.src}
                   alt={doc.alt}
-                  className="w-full h-full object-contain"
+                  className="w-auto h-auto max-w-full max-h-full object-contain mx-auto block" // Adjusted for responsiveness
                 />
               </DialogContent>
             </Dialog>

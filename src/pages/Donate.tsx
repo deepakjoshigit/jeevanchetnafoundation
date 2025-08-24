@@ -1,15 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label"; // Keep Label for general use if needed, though not for amount
+import { Label } from "@/components/ui/label";
 import { Copy } from "lucide-react";
-import { useState } from "react"; // Keep useState for other states if any, or remove if not needed
+import { useState } from "react";
 import { toast } from "sonner";
 import { useConfetti } from "@/components/ConfettiProvider";
 import SEO from "@/components/SEO";
 
 const Donate = () => {
   const upiId = "jeevanchetna@sbi";
-  // Removed amount state as per request
   const { triggerConfetti } = useConfetti();
 
   const handleCopyUpi = () => {
@@ -24,9 +23,8 @@ const Donate = () => {
     triggerConfetti();
   };
 
-  // Simplified UPI link generation without amount
   const generateUpiLink = () => {
-    triggerConfetti(); // Trigger confetti on attempting to open UPI app
+    triggerConfetti();
     return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&cu=INR`;
   };
 
@@ -50,14 +48,14 @@ const Donate = () => {
             <CardDescription className="text-lg">Scan the QR code or use our UPI ID to donate instantly.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-8 flex flex-col items-center">
-            {/* Prominent QR Code */}
-            <div className="p-4 bg-white rounded-lg shadow-lg border border-gray-200">
+            {/* Prominent QR Code - now clickable */}
+            <a href={generateUpiLink()} className="p-4 bg-white rounded-lg shadow-lg border border-gray-200 block cursor-pointer">
               <img
                 src="/jeevanchetna.jpg"
                 alt="Jeevan Chetna Foundation UPI QR Code"
                 className="w-64 h-64 object-contain rounded-md"
               />
-            </div>
+            </a>
 
             {/* UPI ID with Copy Button */}
             <div className="w-full max-w-sm space-y-2 text-center">

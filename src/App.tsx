@@ -1,40 +1,43 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home"; // Corrected from Index
-import About from "./pages/About"; // Corrected from AboutUs
+import Home from "./pages/Home";
+import About from "./pages/About";
 import OurWork from "./pages/OurWork";
 import ProjectDetail from "./pages/ProjectDetail";
-import Contact from "./pages/Contact"; // Corrected from ContactUs
-import Layout from "./components/Layout"; // Using the Layout component
+import Contact from "./pages/Contact";
+import Layout from "./components/Layout";
 import { ThemeProvider } from "./components/theme-provider";
-import Donate from "./pages/Donate"; // Import Donate page
-import TreeDonation from "./pages/TreeDonation"; // Import TreeDonation page
-import NotFound from "./pages/NotFound"; // Import NotFound page
-import Documents from "./pages/Documents"; // Import Documents page
-import { Toaster } from "@/components/ui/sonner"; // Import Toaster for sonner toasts
-import { ConfettiProvider } from "./components/ConfettiProvider"; // Import ConfettiProvider
+import Donate from "./pages/Donate";
+import TreeDonation from "./pages/TreeDonation";
+import NotFound from "./pages/NotFound";
+import Documents from "./pages/Documents";
+import { Toaster } from "@/components/ui/sonner";
+import { ConfettiProvider } from "./components/ConfettiProvider";
+import { HelmetProvider } from 'react-helmet-async'; // New import
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <ConfettiProvider> {/* Wrap the entire app with ConfettiProvider */}
-        <Router>
-          <Layout> {/* Wrap routes with Layout component */}
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/about/documents" element={<Documents />} /> {/* New route for documents */}
-              <Route path="/our-work" element={<OurWork />} />
-              <Route path="/our-work/:projectId" element={<ProjectDetail />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/donate" element={<Donate />} /> {/* New route for Donate page */}
-              <Route path="/tree-donation" element={<TreeDonation />} /> {/* New route for Tree Donation page */}
-              <Route path="*" element={<NotFound />} /> {/* Catch-all route for 404 */}
-            </Routes>
-          </Layout>
-        </Router>
-        <Toaster /> {/* Add Toaster component for sonner toasts */}
-      </ConfettiProvider>
-    </ThemeProvider>
+    <HelmetProvider> {/* Wrap the entire app with HelmetProvider */}
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+        <ConfettiProvider>
+          <Router>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/about/documents" element={<Documents />} />
+                <Route path="/our-work" element={<OurWork />} />
+                <Route path="/our-work/:projectId" element={<ProjectDetail />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/donate" element={<Donate />} />
+                <Route path="/tree-donation" element={<TreeDonation />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </Router>
+          <Toaster />
+        </ConfettiProvider>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

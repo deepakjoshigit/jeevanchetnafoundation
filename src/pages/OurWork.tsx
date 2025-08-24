@@ -5,22 +5,22 @@ const projects = [
   {
     title: "Educational Support Program",
     description: "Providing free tuition, school supplies, and mentorship to over 500 children in rural areas.",
-    image: "https://placehold.co/600x400/a7f3d0/14532d?text=Education",
+    image: "https://images.unsplash.com/photo-1546410531-bb45ec967689?q=80&w=1200&auto=format&fit=crop", // Children in a classroom
   },
   {
     title: "Community Health Camps",
     description: "Organizing monthly health check-up camps, providing free medical consultations and medicines.",
-    image: "https://placehold.co/600x400/fecaca/7f1d1d?text=Health",
+    image: "https://images.unsplash.com/photo-1532938911079-cd88517ba765?q=80&w=1200&auto=format&fit=crop", // Medical camp/checkup
   },
   {
     title: "Women Empowerment Initiative",
     description: "Skill development workshops and financial literacy programs for women to foster entrepreneurship.",
-    image: "https://placehold.co/600x400/bae6fd/0c4a6e?text=Empowerment",
+    image: "https://images.unsplash.com/photo-1524508762098-fd9f6a6b2777?q=80&w=1200&auto=format&fit=crop", // Women learning/working together
   },
   {
     title: "Clean Water Project",
     description: "Installation of water purification systems in villages facing water scarcity and contamination issues.",
-    image: "https://placehold.co/600x400/c7d2fe/3730a3?text=Water",
+    image: "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?q=80&w=1200&auto=format&fit=crop", // Person collecting water from a clean source
   },
 ];
 

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"; // Import social media icons
+import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react"; // Import Youtube icon
 
 const Footer = () => {
   const socialLinks = [
-    { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/jeevanchetnafoundation" },
-    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/jeevanchetnafoundation" },
-    { name: "Twitter", icon: Twitter, url: "https://twitter.com/jeevanchetnafoundation" }, // Assuming Twitter handle is the same
-    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/company/jeevanchetnafoundation" }, // Assuming it's a company page
+    { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/jeevanchetnafoundation/" },
+    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/jeevanchetnafoundation/" },
+    { name: "YouTube", icon: Youtube, url: "https://www.youtube.com/@JEEVANCHETNAFOUNDATION" }, // Added YouTube link
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/company/jeevanchetnafoundation/" },
+    // Removed Twitter as it was not provided in the request, but can be added back if needed.
   ];
 
   return (
@@ -40,7 +41,7 @@ const Footer = () => {
           <h3 className="font-semibold text-white mb-2">Quick Links</h3>
           <div className="grid gap-1">
             <Link to="/about" className="hover:underline hover:text-white">About Us</Link>
-            <Link to="/about/documents" className="hover:underline hover:text-white">Documents</Link> {/* New link */}
+            <Link to="/about/documents" className="hover:underline hover:text-white">Documents</Link>
             <Link to="/our-work" className="hover:underline hover:text-white">Our Work</Link>
             <Link to="/contact" className="hover:underline hover:text-white">Contact</Link>
             <Link to="/donate" className="hover:underline hover:text-white">Donate</Link>

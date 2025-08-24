@@ -40,6 +40,7 @@ const Footer = () => {
           <h3 className="font-semibold text-white mb-2">Quick Links</h3>
           <div className="grid gap-1">
             <Link to="/about" className="hover:underline hover:text-white">About Us</Link>
+            <Link to="/about/documents" className="hover:underline hover:text-white">Documents</Link> {/* New link */}
             <Link to="/our-work" className="hover:underline hover:text-white">Our Work</Link>
             <Link to="/contact" className="hover:underline hover:text-white">Contact</Link>
             <Link to="/donate" className="hover:underline hover:text-white">Donate</Link>

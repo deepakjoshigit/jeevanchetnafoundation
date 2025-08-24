@@ -13,6 +13,7 @@ const Navbar = () => {
   const navLinks = [
     { to: "/", text: "Home" },
     { to: "/about", text: "About Us" },
+    { to: "/about/documents", text: "Documents" }, // New link
     { to: "/our-work", text: "Our Work" },
     { to: "/tree-donation", text: "Tree Donation" },
     { to: "/contact", text: "Contact" },

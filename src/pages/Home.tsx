@@ -1,11 +1,12 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { HandHeart, BookOpen, Users, HeartHandshake, Leaf, ShieldCheck, Calendar, Award, Globe, School, Activity } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import SEO from "@/components/SEO"; // New import
+import SEO from "@/components/SEO";
+import SocialMediaPopup from "@/components/SocialMediaPopup"; // New import
 
 const slides = [
   {
@@ -152,6 +153,23 @@ const Home = () => {
   const plugin = useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true })
   );
+
+  const [showSocialMediaPopup, setShowSocialMediaPopup] = useState(false);
+
+  useEffect(() => {
+    const hasSeenPopup = localStorage.getItem("hasSeenSocialMediaPopup");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => {
+        setShowSocialMediaPopup(true);
+      }, 2000); // Show popup after 2 seconds
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handleCloseSocialMediaPopup = () => {
+    setShowSocialMediaPopup(false);
+    localStorage.setItem("hasSeenSocialMediaPopup", "true");
+  };
 
   return (
     <>
@@ -394,6 +412,7 @@ const Home = () => {
           </section>
         </main>
       </div>
+      <SocialMediaPopup isOpen={showSocialMediaPopup} onClose={handleCloseSocialMediaPopup} />
     </>
   );
 };

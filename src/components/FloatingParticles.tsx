@@ -1,8 +1,12 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile'; // Import the useIsMobile hook
 
 const FloatingParticles: React.FC = () => {
-  const particles = Array.from({ length: 10 }).map((_, i) => (
+  const isMobile = useIsMobile(); // Use the hook to detect mobile
+  const numberOfParticles = isMobile ? 5 : 10; // Fewer particles on mobile
+
+  const particles = Array.from({ length: numberOfParticles }).map((_, i) => (
     <div
       key={i}
       className={cn(

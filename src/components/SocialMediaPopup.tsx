@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, Linkedin, Youtube, X } from "lucide-react"; // Added X for close icon
+import { Facebook, Instagram, Linkedin, Youtube, MessageCircle } from "lucide-react"; // Added MessageCircle for WhatsApp
 
 interface SocialMediaPopupProps {
   isOpen: boolean;
@@ -13,6 +13,7 @@ const socialLinks = [
   { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/jeevanchetnafoundation/", color: "bg-pink-600 hover:bg-pink-700" },
   { name: "YouTube", icon: Youtube, url: "https://www.youtube.com/@JEEVANCHETNAFOUNDATION", color: "bg-red-600 hover:bg-red-700" },
   { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/company/jeevanchetnafoundation/", color: "bg-blue-800 hover:bg-blue-900" },
+  { name: "WhatsApp", icon: MessageCircle, url: "https://wa.me/8958521254", color: "bg-green-500 hover:bg-green-600" }, // Added WhatsApp link
 ];
 
 const SocialMediaPopup: React.FC<SocialMediaPopupProps> = ({ isOpen, onClose }) => {

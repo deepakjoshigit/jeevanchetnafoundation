@@ -6,7 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { HandHeart, BookOpen, Users, HeartHandshake, Leaf, ShieldCheck, Calendar, Award, Globe, School, Activity } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import SEO from "@/components/SEO";
-import SocialMediaPopup from "@/components/SocialMediaPopup"; // New import
+import SocialMediaPopup from "@/components/SocialMediaPopup";
 
 const slides = [
   {
@@ -158,17 +158,29 @@ const Home = () => {
 
   useEffect(() => {
     const hasSeenPopup = localStorage.getItem("hasSeenSocialMediaPopup");
+    let autoCloseTimer: NodeJS.Timeout;
+
     if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
+      const showTimer = setTimeout(() => {
         setShowSocialMediaPopup(true);
+        // Set another timer to close the popup after 10 seconds
+        autoCloseTimer = setTimeout(() => {
+          setShowSocialMediaPopup(false);
+          localStorage.setItem("hasSeenSocialMediaPopup", "true"); // Mark as seen even if auto-closed
+        }, 10000); // 10 seconds
       }, 2000); // Show popup after 2 seconds
-      return () => clearTimeout(timer);
+
+      return () => {
+        clearTimeout(showTimer);
+        clearTimeout(autoCloseTimer); // Clear auto-close timer if component unmounts or dependency changes
+      };
     }
   }, []);
 
   const handleCloseSocialMediaPopup = () => {
     setShowSocialMediaPopup(false);
     localStorage.setItem("hasSeenSocialMediaPopup", "true");
+    // The auto-close timer will be cleared by the useEffect cleanup if it's still running
   };
 
   return (

@@ -43,14 +43,14 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:url" content={ogUrl || defaultOgUrl} />
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={ogDescription || description} />
-      <meta property="og:image" content={ogImage || "/jeevanchetna.jpg"} /> {/* Use your default image */}
+      <meta property="og:image" content={ogImage || "/jeevanchetna-logo.png"} /> {/* Use your default image */}
 
       {/* Twitter */}
       <meta property="twitter:card" content={twitterCard} />
       <meta property="twitter:url" content={ogUrl || defaultOgUrl} />
       <meta property="twitter:title" content={twitterTitle || title} />
       <meta property="twitter:description" content={twitterDescription || description} />
-      <meta property="twitter:image" content={twitterImage || "/jeevanchetna.jpg"} />
+      <meta property="twitter:image" content={twitterImage || "/jeevanchetna-logo.png"} />
       {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
     </Helmet>
   );

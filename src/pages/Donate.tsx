@@ -73,7 +73,7 @@ const Donate = () => {
                 <p className="text-muted-foreground font-mono text-xl">{upiId}</p>
                 <Button variant="ghost" size="icon" onClick={handleCopyUpi} className="text-primary hover:text-primary/80">
                   <Copy className="h-5 w-5" />
-                  <span className="sr-only">Copy UPI ID</span>
+                  <span className="sr-only">Copy Jeevan Chetna Foundation UPI ID</span>
                 </Button>
               </div>
             </div>

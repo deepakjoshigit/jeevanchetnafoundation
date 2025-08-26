@@ -84,56 +84,56 @@ const Donate = () => {
             <CardTitle className="text-primary">Bank Transfer</CardTitle>
             <CardDescription>Direct bank transfer details</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Account Name</h3>
-              <div className="flex items-center space-x-2">
-                <p className="text-muted-foreground">Jeevan Chetna Foundation</p>
-                <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("Jeevan Chetna Foundation")}>
-                  <Copy className="h-4 w-4" />
-                  <span className="sr-only">Copy Account Name</span>
-                </Button>
+          <CardContent className="space-y-4 p-6 bg-gray-50 rounded-lg border border-gray-200"> {/* Added styling to CardContent */}
+            <div className="flex items-center justify-between p-3 bg-white rounded-md border border-gray-100 shadow-sm">
+              <div className="flex flex-col">
+                <span className="text-sm font-medium text-muted-foreground">Account Name</span>
+                <p className="text-lg font-semibold text-foreground">Jeevan Chetna Foundation</p>
               </div>
+              <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("Jeevan Chetna Foundation")} className="text-primary hover:bg-primary/10">
+                <Copy className="h-5 w-5" />
+                <span className="sr-only">Copy Account Name</span>
+              </Button>
             </div>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Account Number</h3>
-              <div className="flex items-center space-x-2">
-                <p className="text-muted-foreground">44208565753</p>
-                <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("44208565753")}>
-                  <Copy className="h-4 w-4" />
-                  <span className="sr-only">Copy Account Number</span>
-                </Button>
+            <div className="flex items-center justify-between p-3 bg-white rounded-md border border-gray-100 shadow-sm">
+              <div className="flex flex-col">
+                <span className="text-sm font-medium text-muted-foreground">Account Number</span>
+                <p className="text-lg font-semibold text-foreground">44208565753</p>
               </div>
+              <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("44208565753")} className="text-primary hover:bg-primary/10">
+                <Copy className="h-5 w-5" />
+                <span className="sr-only">Copy Account Number</span>
+              </Button>
             </div>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">IFSC Code</h3>
-              <div className="flex items-center space-x-2">
-                <p className="text-muted-foreground">SBIN0000646</p>
-                <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("SBIN0000646")}>
-                  <Copy className="h-4 w-4" />
-                  <span className="sr-only">Copy IFSC Code</span>
-                </Button>
+            <div className="flex items-center justify-between p-3 bg-white rounded-md border border-gray-100 shadow-sm">
+              <div className="flex flex-col">
+                <span className="text-sm font-medium text-muted-foreground">IFSC Code</span>
+                <p className="text-lg font-semibold text-foreground">SBIN0000646</p>
               </div>
+              <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("SBIN0000646")} className="text-primary hover:bg-primary/10">
+                <Copy className="h-5 w-5" />
+                <span className="sr-only">Copy IFSC Code</span>
+              </Button>
             </div>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Bank Name</h3>
-              <div className="flex items-center space-x-2">
-                <p className="text-muted-foreground">State Bank of India</p>
-                <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("State Bank of India")}>
-                  <Copy className="h-4 w-4" />
-                  <span className="sr-only">Copy Bank Name</span>
-                </Button>
+            <div className="flex items-center justify-between p-3 bg-white rounded-md border border-gray-100 shadow-sm">
+              <div className="flex flex-col">
+                <span className="text-sm font-medium text-muted-foreground">Bank Name</span>
+                <p className="text-lg font-semibold text-foreground">State Bank of India</p>
               </div>
+              <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("State Bank of India")} className="text-primary hover:bg-primary/10">
+                <Copy className="h-5 w-5" />
+                <span className="sr-only">Copy Bank Name</span>
+              </Button>
             </div>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-foreground">Branch</h3>
-              <div className="flex items-center space-x-2">
-                <p className="text-muted-foreground">Haldwani Main Branch</p>
-                <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("Haldwani Main Branch")}>
-                  <Copy className="h-4 w-4" />
-                  <span className="sr-only">Copy Branch</span>
-                </Button>
+            <div className="flex items-center justify-between p-3 bg-white rounded-md border border-gray-100 shadow-sm">
+              <div className="flex flex-col">
+                <span className="text-sm font-medium text-muted-foreground">Branch</span>
+                <p className="text-lg font-semibold text-foreground">Haldwani Main Branch</p>
               </div>
+              <Button variant="ghost" size="icon" onClick={() => handleCopyBankDetail("Haldwani Main Branch")} className="text-primary hover:bg-primary/10">
+                <Copy className="h-5 w-5" />
+                <span className="sr-only">Copy Branch</span>
+              </Button>
             </div>
           </CardContent>
         </Card>

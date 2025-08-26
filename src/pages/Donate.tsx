@@ -25,7 +25,10 @@ const Donate = () => {
 
   const generateUpiLink = () => {
     triggerConfetti();
-    return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&cu=INR`;
+    // Adding 'am=0' (amount) and 'tr' (transaction reference) for better compatibility
+    // The user can change the amount in their UPI app.
+    const transactionRef = `JCF${Date.now()}`; // Unique transaction reference
+    return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&cu=INR&am=0&tr=${transactionRef}`;
   };
 
   return (

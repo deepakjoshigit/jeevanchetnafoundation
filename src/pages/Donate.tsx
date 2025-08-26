@@ -6,7 +6,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useConfetti } from "@/components/ConfettiProvider";
 import SEO from "@/components/SEO";
-import { QRCode } from "qrcode.react"; // Corrected import: named export
+import QRCodeWrapper from "@/components/QRCodeWrapper"; // Import the new wrapper component
 
 const Donate = () => {
   const upiId = "jeevanchetna@sbi";
@@ -50,7 +50,7 @@ const Donate = () => {
           <CardContent className="space-y-8 flex flex-col items-center">
             {/* Dynamically generated QR Code */}
             <div className="p-4 bg-white rounded-lg shadow-lg border border-gray-200 block cursor-pointer">
-              <QRCode
+              <QRCodeWrapper // Use the wrapper component here
                 value={generateUpiLink()}
                 size={256} // Set a fixed size for the QR code
                 level="H" // High error correction level

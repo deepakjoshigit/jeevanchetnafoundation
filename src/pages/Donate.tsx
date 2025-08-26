@@ -6,6 +6,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useConfetti } from "@/components/ConfettiProvider";
 import SEO from "@/components/SEO";
+import QRCode from "qrcode.react"; // Import QRCode
 
 const Donate = () => {
   const upiId = "jeevanchetna@sbi";
@@ -24,7 +25,6 @@ const Donate = () => {
   };
 
   const generateUpiLink = () => {
-    triggerConfetti();
     return `upi://pay?pa=${upiId}&pn=Jeevan%20Chetna%20Foundation&cu=INR`;
   };
 
@@ -48,14 +48,23 @@ const Donate = () => {
             <CardDescription className="text-lg">Scan the QR code or use our UPI ID to donate instantly.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-8 flex flex-col items-center">
-            {/* Prominent QR Code - now clickable */}
-            <a href={generateUpiLink()} className="p-4 bg-white rounded-lg shadow-lg border border-gray-200 block cursor-pointer">
-              <img
-                src="/jeevanchetna.jpg"
-                alt="Jeevan Chetna Foundation UPI QR Code"
-                className="w-64 h-64 object-contain rounded-md"
+            {/* Dynamically generated QR Code */}
+            <div className="p-4 bg-white rounded-lg shadow-lg border border-gray-200 block cursor-pointer">
+              <QRCode
+                value={generateUpiLink()}
+                size={256} // Set a fixed size for the QR code
+                level="H" // High error correction level
+                renderAs="svg" // Render as SVG for better scalability
+                imageSettings={{
+                  src: "/jeevanchetna-logo.png", // Use the new logo in the center of the QR code
+                  x: null,
+                  y: null,
+                  height: 60,
+                  width: 60,
+                  excavate: true,
+                }}
               />
-            </a>
+            </div>
 
             {/* UPI ID with Copy Button */}
             <div className="w-full max-w-sm space-y-2 text-center">
@@ -71,7 +80,7 @@ const Donate = () => {
 
             {/* Direct Pay Button */}
             <Button asChild className="w-full max-w-sm bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-6">
-              <a href={generateUpiLink()}>Pay with BHIM UPI App</a>
+              <a href={generateUpiLink()} onClick={triggerConfetti}>Pay with BHIM UPI App</a>
             </Button>
           </CardContent>
         </Card>

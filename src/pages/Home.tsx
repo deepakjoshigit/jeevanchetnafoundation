@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { HandHeart, BookOpen, Users, HeartHandshake, Leaf, ShieldCheck, Calendar, Award, Globe, School, Activity } from "lucide-react";
+import { HandHeart, BookOpen, Users, HeartHandshake, Leaf, ShieldCheck, Calendar, Award, Globe, School, Activity, FileText, Handshake, Rocket, Wallet, Building } from "lucide-react"; // Added new icons
 import Autoplay from "embla-carousel-autoplay";
 import SEO from "@/components/SEO";
 import SocialMediaPopup from "@/components/SocialMediaPopup";
@@ -147,6 +147,39 @@ const achievements = [
     description: "Direct beneficiaries across our programs",
     icon: HeartHandshake
   }
+];
+
+const trustSymbols = [
+  {
+    title: "Registered & Compliant",
+    description: "Legally registered under the Companies Act, 2013, with all necessary government approvals and licenses.",
+    icon: FileText,
+    color: "text-blue-600"
+  },
+  {
+    title: "Tax Exempt Status",
+    description: "Donations are eligible for tax benefits under Section 80G of the Income Tax Act, 1961 (as per Form 10AC).",
+    icon: Wallet,
+    color: "text-green-600"
+  },
+  {
+    title: "CSR Approved",
+    description: "Approved for Corporate Social Responsibility (CSR) initiatives, fostering impactful partnerships.",
+    icon: Handshake,
+    color: "text-purple-600"
+  },
+  {
+    title: "Startup India Recognized",
+    description: "Recognized by Startup India for our innovative and impactful social development models.",
+    icon: Rocket,
+    color: "text-orange-600"
+  },
+  {
+    title: "NITI Aayog Registered",
+    description: "Registered with NITI Aayog (DARPAN), affirming our commitment to national development goals.",
+    icon: Building,
+    color: "text-red-600"
+  },
 ];
 
 const Home = () => {
@@ -341,8 +374,8 @@ const Home = () => {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">{event.description}</p>
-                      <Button variant="link" className="mt-4 px-0 text-primary hover:text-primary/80">
-                        Learn More →
+                      <Button variant="link" asChild className="mt-4 px-0 text-primary hover:text-primary/80">
+                        <Link to="/contact">Learn More →</Link>
                       </Button>
                     </CardContent>
                   </Card>
@@ -374,6 +407,38 @@ const Home = () => {
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Our Commitment to Transparency & Trust */}
+          <section className="w-full py-12 md:py-24 bg-secondary/10">
+            <div className="container px-4 md:px-6">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">Our Commitment to Transparency & Trust</h2>
+                <p className="max-w-[900px] mx-auto text-lg text-muted-foreground mt-4">
+                  At Jeevan Chetna Foundation, transparency and accountability are paramount. We are a fully registered and recognized non-profit organization, ensuring every contribution makes a genuine and verifiable impact.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {trustSymbols.map((symbol, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                    <CardHeader className="flex flex-row items-center space-x-4">
+                      <div className={`p-3 rounded-full bg-primary/10 ${symbol.color}`}>
+                        <symbol.icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle>{symbol.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">{symbol.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <div className="text-center mt-12">
+                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                  <Link to="/about/documents">View All Our Official Documents</Link>
+                </Button>
               </div>
             </div>
           </section>
